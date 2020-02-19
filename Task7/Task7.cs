@@ -16,17 +16,20 @@ namespace Task7
     {
         public static int sum = 0;
 
+        //Метов который выводит на экран числа от a до b включительно, и считает сумму от a до b включительно.
         public static void Recursion(int a, int b) 
         {
             Console.Write($"{a} ");
             sum += a;
             a++;
 
-            if (a >= b) 
+            if (a == b) 
             {
                 sum += b;
+                Console.Write($"{a} ");
                 return;
-            } 
+            }
+            
             Recursion(a, b);
         }
 
@@ -36,10 +39,12 @@ namespace Task7
             int b;
 
             Random ranNum = new Random();
-
+            
+            //Создание случайных чисел a и b.
             a = ranNum.Next(0, 100);
             b = ranNum.Next(0, 100);
 
+            //Если а > b, значения меняются местами
             if (a > b)
             {
                 a = a + b;
